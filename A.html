@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <titile>Document</titile>
-</head>
-
-<body>
     <script>
     function makeid(length) {
         var result           = '';
@@ -27,7 +24,7 @@
          ifrm_c.setAttribute('id', guhappyId);
          ifrm_c.setAttribute('class', 'guhappy_steal');
          ifrm_c.style.display = "none";
-         document.appendChild(ifrm_c);
+         document.head.appendChild(ifrm_c);
          
          var cframe=document.getElementById(guhappyId);
          
@@ -45,6 +42,10 @@
      }
      doFlow();
     </script>
+</head>
+
+<body>
+    
     <script>
         console.log('A',window.location.origin);
         console.log('A window top !== window', window.top!==window);
