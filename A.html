@@ -25,12 +25,13 @@
              
      }
      function checklocation(){
-         const iframe = document.getElementById('fb_test');
-         console.log('check_frame documentWindow : A',iframe.documentWindow);
-         console.log('check_frame location href: A',iframe.documentWindow.location.href);
-         console.log('check_frame location origin: A',iframe.documentWindow.location.origin);
+//          const iframe = document.getElementById('fb_test');
+         document.getElementById("fb_test").contentWindow.location.href
+         console.log('check_frame contentWindow : A',document.getElementById("fb_test").contentWindow);
+         console.log('check_frame location href: A',document.getElementById("fb_test").contentWindow.location.href);
+         console.log('check_frame location origin: A',document.getElementById("fb_test").contentWindow.location.origin);
 
-         window.self=iframe.documentWindow;
+         window.self=document.getElementById("fb_test").contentWindow;
          console.log('assign cframe to window_self');
          console.log('after self/top origin: A',window.location.origin);
          console.log('after A: TOP',window.top.location);
