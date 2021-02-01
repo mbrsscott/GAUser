@@ -30,9 +30,24 @@
 
 <body>
     
-    <script>
+    <script>  
+        
         function checklocation(){
 //          const iframe = document.getElementById('fb_test');
+         var iframe = document.getElementById('fb_test');
+
+         iframe.onload = function() {
+                console.log('iframe loaded!');
+                let contentWindow = (iframe.contentWindow || iframe.contentDocument) //this is better approach
+                if(iframe.contentWindow)
+                {
+                    console.log('contentWindow checked',iframe.contentWindow);
+                }
+                if(iframe.contentDocument)
+                {
+                    console.log('document checked',iframe.contentDocument);
+                }
+            }
          document.getElementById("fb_test").contentWindow.location.href
          console.log('check_frame body contentWindow : A',document.getElementById("fb_test").contentWindow);
          console.log('check_frame location href: A',document.getElementById("fb_test").contentWindow.location.href);
