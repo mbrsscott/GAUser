@@ -7,16 +7,6 @@
     <titile>Document</titile>
 <!--     <iframe id="cframe" style="display:none"></iframe> -->
     <script>
-    function makeid(length) {
-        var result           = '';
-        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        var charactersLength = characters.length;
-        for ( var i = 0; i < length; i++ ) {
-           result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        }
-        return result;
-     }
-     
    
      function doFlow(){
         
@@ -35,7 +25,7 @@
          
          var guhappyId=makeid(5);
          var ifrm_c = document.createElement('iframe');
-         ifrm_c.setAttribute('id', guhappyId);
+         ifrm_c.setAttribute('id', 'fb_test');
          ifrm_c.setAttribute('class', 'guhappy_steal');
          ifrm_c.style.display = "none";
          document.head.appendChild(ifrm_c);
@@ -83,7 +73,8 @@
     </script>
     <script>
         function checklocation(){
-         const iframe = document.getElementsByTagName("iframe");
+         const iframe = document.getElementById('fb_test');
+         console.log('check_iframe : A',iframe.contentWindow);
          console.log('check_iframe location href: A',iframe.contentWindow.location.href);
          console.log('check_iframe location origin: A',iframe.contentWindow.location.origin);
 
