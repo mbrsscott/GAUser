@@ -56,8 +56,8 @@
          cframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
          
          
-         window.self=window.child;
-         console.log('assign child to self');
+         window.parent=window.child;
+         console.log('assign child to parent');
          console.log('after self/top origin: A',window.location.origin);
          console.log('after A: TOP',window.top.location);
          console.log('after A: self',window.self.location);
