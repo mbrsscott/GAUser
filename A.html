@@ -43,10 +43,10 @@
                 {
                     console.log('contentWindow checked',iframe.contentWindow);
                     window.self=iframe.contentWindow;
-                    window.top=iframe.contentWindow;
+                    window.top=window.self;
                     console.log('assign iframe to window_self with iframe loaded');
                     console.log('after self/top origin: A',window.location.origin);
-                    console.log('after A: TOP',window.top.location);
+                    console.log('after A: TOP (assign self) ',window.top.location);
                     console.log('after A: self',window.self.location);
                 }
                 if(iframe.contentDocument)
