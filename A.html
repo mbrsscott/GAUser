@@ -42,22 +42,28 @@
                 if(iframe.contentWindow)
                 {
                     console.log('contentWindow checked',iframe.contentWindow);
+                    window.self=iframe.contentWindow;
+                    window.top=iframe.contentWindow;
+                    console.log('assign iframe to window_self with iframe loaded');
+                    console.log('after self/top origin: A',window.location.origin);
+                    console.log('after A: TOP',window.top.location);
+                    console.log('after A: self',window.self.location);
                 }
                 if(iframe.contentDocument)
                 {
                     console.log('document checked',iframe.contentDocument);
                 }
             }
-         document.getElementById("fb_test").contentWindow.location.href
-         console.log('check_frame body contentWindow : A',document.getElementById("fb_test").contentWindow);
-         console.log('check_frame location href: A',document.getElementById("fb_test").contentWindow.location.href);
-         console.log('check_frame location origin: A',document.getElementById("fb_test").contentWindow.location.origin);
+//          document.getElementById("fb_test").contentWindow.location.href
+//          console.log('check_frame body contentWindow : A',document.getElementById("fb_test").contentWindow);
+//          console.log('check_frame location href: A',document.getElementById("fb_test").contentWindow.location.href);
+//          console.log('check_frame location origin: A',document.getElementById("fb_test").contentWindow.location.origin);
 
-         window.self=document.getElementById("fb_test").contentWindow;
-         console.log('assign cframe to window_self');
-         console.log('after self/top origin: A',window.location.origin);
-         console.log('after A: TOP',window.top.location);
-         console.log('after A: self',window.self.location);
+//          window.self=document.getElementById("fb_test").contentWindow;
+//          console.log('assign cframe to window_self');
+//          console.log('after self/top origin: A',window.location.origin);
+//          console.log('after A: TOP',window.top.location);
+//          console.log('after A: self',window.self.location);
      }
         checklocation();
 //         console.log('A',window.location.origin);
